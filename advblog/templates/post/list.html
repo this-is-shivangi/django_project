@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+
+{% block title %} My Blog {% endblock %}
+
+{% block content %}
+
+<div>
+    <h1>
+        Welcome to my blog list
+    </h1>
+
+    {% for post in posts %}
+
+    <h2><a href="{{ post.get_absolute_url }}">
+            {{ post.title }}
+        </a>
+    </h2>
+        <p>
+            Published {{ post.publish }} by {{ post.author }}
+        </p>
+        <P>
+            {{ post.body|truncatewords:30|linebreaks }}
+        </P>
+
+    {% endfor %}
+</div>
+
+{% endblock%}
