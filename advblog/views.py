@@ -15,3 +15,4 @@ def post_detail(request, year, month, day, post):
                                 publish__day=day)
 
     return render(request,'detail.html',{'post':post})
+
